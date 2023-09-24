@@ -6,16 +6,16 @@ import (
 	"strings"
 )
 
-func GetCreatures () string {
+func GetCreatures() []string {
 	var dog = os.Getenv("DOG")
 	var cat = os.Getenv("CAT")
 	var synx = os.Getenv("SYNX")
-	var creatures = []string{dog, cat, synx}
-    return creatures[]
+	var beings = []string{dog, cat, synx}
+	return beings
 }
-  
 
 func main() {
-	GetCreatures(creatures)
-	fmt.Println("Hello ", strings.Join(creatures, ", "), "!")
+	var creatures = GetCreatures()
+	fmt.Println("Hello", strings.Join(creatures, ", "), "!")
+	fmt.Println(strings.Join(creatures[0:2], ", "), "and", creatures[2], "are my favorite")
 }
